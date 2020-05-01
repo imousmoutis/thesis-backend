@@ -17,6 +17,7 @@ public class ValidateUserDTO {
   private String password;
 
   @Email
+  @Length(min = 1, max = 255)
   private String email;
 
   @Length(min = 1, max = 255)
