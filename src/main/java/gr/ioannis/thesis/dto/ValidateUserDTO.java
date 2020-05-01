@@ -22,4 +22,5 @@ public class ValidateUserDTO {
   @Length(min = 1, max = 255)
   private String fullName;
 
+
 }

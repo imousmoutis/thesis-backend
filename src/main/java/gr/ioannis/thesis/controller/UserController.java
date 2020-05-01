@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -45,6 +46,14 @@ public class UserController {
         Direction.ASC : Direction.DESC,
         sortColumn)));
     return userService.findUsers(userSearchCriteria);
+  }
+
+  @RequestMapping(method = RequestMethod.POST, produces = "plain/text")
+  @ResponseBody
+  @ResourceAccess(roleAccess = {"Administrator"})
+  public String createUser(@RequestBody UserDTO userDTO) {
+    userService.updateUser(userDTO, false, false);
+    return userDTO.getId();
   }
 
 }

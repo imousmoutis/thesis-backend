@@ -27,7 +27,7 @@ import java.util.Optional;
 @RestController
 public class IndexController {
 
-  private final String SEARCH_USER_ID = "322d4a48-cae4-4114-88ab-05da16db053e";
+  private static final String SEARCH_USER_ID = "322d4a48-cae4-4114-88ab-05da16db053e";
 
   private AuthenticationService authenticationService;
 
