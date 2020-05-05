@@ -24,7 +24,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 
-@RestController
+@RestController(value = "/")
 public class IndexController {
 
   private static final String SEARCH_USER_ID = "322d4a48-cae4-4114-88ab-05da16db053e";
@@ -49,7 +49,7 @@ public class IndexController {
     this.userMapper = userMapper;
   }
 
-  @RequestMapping(value = "/", method = RequestMethod.GET, produces = "text/plain")
+  @RequestMapping(method = RequestMethod.GET, produces = "text/plain")
   public String homepage() {
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm");
     Date date = new Date(System.currentTimeMillis());
@@ -57,7 +57,7 @@ public class IndexController {
     return "Server is running with current timestamp " + formatter.format(date);
   }
 
-  @RequestMapping(method = RequestMethod.POST, value = "/login")
+  @RequestMapping(method = RequestMethod.POST, value = "login/")
   @ResponseBody
   public Response login(@RequestBody UserDetailsDTO user,
       HttpServletResponse response) {
@@ -67,14 +67,14 @@ public class IndexController {
     return Response.ok(user).build();
   }
 
-  @RequestMapping(method = RequestMethod.DELETE, value = "/logout")
+  @RequestMapping(method = RequestMethod.DELETE, value = "logout/")
   @ResponseBody
   public Response logout(HttpServletRequest req) {
     logoutService.performLogout(req);
     return Response.ok().build();
   }
 
-  @RequestMapping(method = RequestMethod.POST, value = "/register", produces = "plain/text")
+  @RequestMapping(method = RequestMethod.POST, value = "register/", produces = "plain/text")
   @ResponseBody
   public String createUser(@Valid @RequestBody ValidateUserDTO validateUserDTO) {
     UserDTO userDTO = userMapper.mapToDto(validateUserDTO);

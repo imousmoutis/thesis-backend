@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "user")
+@RequestMapping(value = "/user/")
 public class UserController {
 
   private UserSearchCriteria userSearchCriteria;
@@ -30,7 +30,7 @@ public class UserController {
     this.userService = userService;
   }
 
-  @RequestMapping(method = RequestMethod.GET, value = "/count", produces = "application/json")
+  @RequestMapping(method = RequestMethod.GET, value = "count/", produces = "application/json")
   @ResponseBody
   @ResourceAccess(roleAccess = {"Administrator"})
   public long getUsersCount() {
