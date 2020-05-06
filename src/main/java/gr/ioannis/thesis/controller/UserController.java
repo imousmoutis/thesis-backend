@@ -10,16 +10,16 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/user/")
+@RequestMapping(value = "/user")
 public class UserController {
 
   private UserSearchCriteria userSearchCriteria;
@@ -32,15 +32,13 @@ public class UserController {
     this.userService = userService;
   }
 
-  @RequestMapping(method = RequestMethod.GET, value = "count/", produces = "application/json")
-  @ResponseBody
+  @GetMapping(value = "/count")
   @ResourceAccess(roleAccess = {"Administrator"})
   public long getUsersCount() {
     return userService.findUserCount(userSearchCriteria);
   }
 
-  @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-  @ResponseBody
+  @GetMapping
   @ResourceAccess(roleAccess = {"Administrator"})
   public Iterable<UserDTO> getUsers(@RequestParam int page,
       @RequestParam int size, @RequestParam String sortColumn, @RequestParam String sortOrder) {
@@ -50,15 +48,14 @@ public class UserController {
     return userService.findUsers(userSearchCriteria);
   }
 
-  @RequestMapping(method = RequestMethod.POST, produces = "plain/text")
-  @ResponseBody
+  @PostMapping(produces = "plain/text")
   @ResourceAccess(roleAccess = {"Administrator"})
   public String createUser(@RequestBody UserDTO userDTO) {
     userService.updateUser(userDTO, false, false);
     return userDTO.getId();
   }
 
-  @DeleteMapping(value = "{userId}", produces = "plain/text")
+  @DeleteMapping(value = "/{userId}", produces = "plain/text")
   @ResourceAccess(roleAccess = {"Administrator"})
   public String deleteUser(@PathVariable String userId) {
     userService.deleteUser(userId);

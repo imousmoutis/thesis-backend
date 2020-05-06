@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping(value = "/lexicon/")
+@RequestMapping(value = "/lexicon")
 public class LexiconController {
 
   private KeyService keyService;
@@ -31,7 +31,7 @@ public class LexiconController {
     return keyService.getTranslationsForGroupNameAndLocale("ui", lang);
   }
 
-  @GetMapping(value = "languages/")
+  @GetMapping(value = "/languages")
   public List<LanguageDTO> getLanguages() {
     return languageService.getLanguages(false);
   }

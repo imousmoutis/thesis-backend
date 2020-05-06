@@ -14,17 +14,19 @@ import javax.validation.Valid;
 import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Optional;
 
-@RestController(value = "/")
+@RestController
+@RequestMapping(value = "/")
 public class IndexController {
 
   private static final String SEARCH_USER_ID = "322d4a48-cae4-4114-88ab-05da16db053e";
@@ -49,33 +51,28 @@ public class IndexController {
     this.userMapper = userMapper;
   }
 
-  @RequestMapping(method = RequestMethod.GET, produces = "text/plain")
+  @GetMapping(produces = "text/plain")
   public String homepage() {
     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm");
     Date date = new Date(System.currentTimeMillis());
-
     return "Server is running with current timestamp " + formatter.format(date);
   }
 
-  @RequestMapping(method = RequestMethod.POST, value = "login/")
-  @ResponseBody
+  @PostMapping(value = "login")
   public Response login(@RequestBody UserDetailsDTO user,
       HttpServletResponse response) {
     String generatedJwt = authenticationService.authenticate(user);
     response.setHeader(HttpHeaders.AUTHORIZATION, generatedJwt);
-
     return Response.ok(user).build();
   }
 
-  @RequestMapping(method = RequestMethod.DELETE, value = "logout/")
-  @ResponseBody
+  @DeleteMapping(value = "logout")
   public Response logout(HttpServletRequest req) {
     logoutService.performLogout(req);
     return Response.ok().build();
   }
 
-  @RequestMapping(method = RequestMethod.POST, value = "register/", produces = "plain/text")
-  @ResponseBody
+  @PostMapping(value = "register", produces = "plain/text")
   public String createUser(@Valid @RequestBody ValidateUserDTO validateUserDTO) {
     UserDTO userDTO = userMapper.mapToDto(validateUserDTO);
     userDTO.setStatus((byte) 1);
