@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -54,6 +56,13 @@ public class UserController {
   public String createUser(@RequestBody UserDTO userDTO) {
     userService.updateUser(userDTO, false, false);
     return userDTO.getId();
+  }
+
+  @DeleteMapping(value = "{userId}", produces = "plain/text")
+  @ResourceAccess(roleAccess = {"Administrator"})
+  public String deleteUser(@PathVariable String userId) {
+    userService.deleteUser(userId);
+    return userId;
   }
 
 }
