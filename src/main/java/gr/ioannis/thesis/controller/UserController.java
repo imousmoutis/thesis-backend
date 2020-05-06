@@ -5,6 +5,7 @@ import com.eurodyn.qlack.fuse.aaa.criteria.UserSearchCriteria;
 import com.eurodyn.qlack.fuse.aaa.criteria.UserSearchCriteria.UserSearchCriteriaBuilder;
 import com.eurodyn.qlack.fuse.aaa.dto.UserDTO;
 import com.eurodyn.qlack.fuse.aaa.service.UserService;
+import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -48,18 +49,18 @@ public class UserController {
     return userService.findUsers(userSearchCriteria);
   }
 
-  @PostMapping(produces = "plain/text")
+  @PostMapping()
   @ResourceAccess(roleAccess = {"Administrator"})
-  public String createUser(@RequestBody UserDTO userDTO) {
+  public Response updateUser(@RequestBody UserDTO userDTO) {
     userService.updateUser(userDTO, false, false);
-    return userDTO.getId();
+    return Response.ok(userDTO.getId()).build();
   }
 
-  @DeleteMapping(value = "/{userId}", produces = "plain/text")
+  @DeleteMapping(value = "/{userId}")
   @ResourceAccess(roleAccess = {"Administrator"})
-  public String deleteUser(@PathVariable String userId) {
+  public Response deleteUser(@PathVariable String userId) {
     userService.deleteUser(userId);
-    return userId;
+    return Response.ok(userId).build();
   }
 
 }
