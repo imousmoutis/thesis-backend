@@ -2,9 +2,9 @@ groups:
   - name: ui
     description: UI translations
 languages:
-  - name: English
+  - name: english
     locale: en
-  - name: Greek
+  - name: greek
     locale: gr
 translations:
   ################################################################################
