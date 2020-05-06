@@ -1,0 +1,109 @@
+groups:
+  - name: ui
+    description: UI translations
+languages:
+  - name: English
+    locale: en
+  - name: Greek
+    locale: gr
+translations:
+  ################################################################################
+  # ENGLISH translations
+  ################################################################################
+  - group: ui
+    locale: en
+    keys:
+      - welcomeMessage: Welcome to My App
+      - serverConnection: Connecting with server...
+      - serverStatus: Server is down.
+      - home: Home
+      - login: Login
+      - dashboard: Dashboard
+      - admin: Admin
+      - logout: Logout
+      - register: Register
+      - loginHeader: Login using your credentials
+      - registerHeader: Register your new account
+      - username: Username
+      - password: Password
+      - fullName: Full Name
+      - email: Email Address
+      - usernameRequired: The username is required.
+      - passwordRequired: The password is required.
+      - passwordPatternInvalid: The password must contain at least one capital letter, one symbol and one number.
+      - fullNameRequired: The full name is required.
+      - emailRequired: The email address Name is required.
+      - credentialsInvalid: Please check your credentials.
+      - registerButton: New here? Register.
+      - loginButton: Already registered? Login.
+      - loginSuccessful: You are successfully logged in.
+      - registerSuccessful: You are successfully registered.
+      - genericError: An error occurred while serving your request. Please try again or contact your administrator.
+      - unauthorizedError: You tried to access a page for which you do not have access. You are being logged out.
+      - greeting: Hi
+      - adminPageHeading1: There are
+      - adminPageHeading2: registered users.
+      - status: Status
+      - editUser: Edit User
+      - save: Save
+      - delete: Delete
+      - cancel: Cancel
+      - yesMessage: Yes!
+      - noMessage: No!
+      - saveUserSuccessful: User successfully saved.
+      - deleteUserSuccessful: User successfully deleted.
+      - deleteUserConfirmation: Are you sure you want to delete this user?
+      - actions: Actions
+      - language: Language
+      - english: English
+      - greek: Greek
+  ################################################################################
+  # GREEK translations
+  ################################################################################
+  - group: ui
+    locale: gr
+    keys:
+      - welcomeMessage: Καλωσήρθατε στην Εφαρμογή μου
+      - serverConnection: Σύνδεση με τον server...
+      - serverStatus: Ο server δεν είναι διαθέσιμος.
+      - home: Αρχική Σελίδα
+      - login: Σύνδεση
+      - dashboard: Ταμπλό
+      - admin: Διαχείρηση
+      - logout: Αποσύνδεση
+      - register: Εγγραφή
+      - loginHeader: Συνδεθείτε με τα στοιχεία σας
+      - registerHeader: Δημιουργήστε το νέο λογαριασμό σας
+      - username: Όνομα Χρήστη
+      - password: Κωδικός Πρόσβασης
+      - fullName: Πλήρες Όνομα
+      - email: Ηλεκτρονική Διεύθυνση
+      - usernameRequired: Το όνομα χρήστη είναι υποχρεωτικό.
+      - passwordRequired: Ο κωδικός πρόσβασης είναι υποχρεωτικός.
+      - passwordPatternInvalid: Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ένα κεφαλαίο γράμμα, ένα σύμβολο και έναν αριθμό.
+      - fullNameRequired: Το πλήρες όνομα είναι υποχρεωτικό.
+      - emailRequired: Η ηλεκτρονική διεύθυνση είναι υποχρεωτική.
+      - credentialsInvalid: Τα στοιχεία σύνδεσής σας είναι λανθασμένα.
+      - registerButton: Νέος χρήστης; Δημιουργήστε έναν λογαριασμό.
+      - loginButton: Έχετε ήδη λογαριασμό; Συνδεθείτε.
+      - loginSuccessful: Συνδεθήκατε με επιτυχία.
+      - registerSuccessful: Ο λογαριασμός σας δημιουργήθηκε με επιτυχία.
+      - genericError: Παρουσιάστηκε ένα πρόβλημα κατά την εξυπηρέτηση του αιτήματός σας. Προσπαθήστε ξανά ή επικοινωνήστε με τον διαχειριστή.
+      - unauthorizedError: Προσπαθήσατε να αποκτήσετε πρόσβαση σε σελίδα για την οποία δεν έχετε τα απαραίτητα δικαιώματα. Αποσυνδύεστε από το σύστημα.
+      - greeting: Γεια
+      - adminPageHeading1: Υπάρχουν
+      - adminPageHeading2: εγγεγραμένοι χρήστες.
+      - status: Κατάσταση
+      - editUser: Επεξεργασία Χρήστη
+      - save: Αποθήκευση
+      - delete: Διαγραφή
+      - cancel: Ακύρωση
+      - yesMessage: Ναι
+      - noMessage: Όχι
+      - saveUserSuccessful: Ο χρήστης δημιουργήθηκε με επιτυχία.
+      - deleteUserSuccessful: Ο χρήστης διαγράφηκε με επιτυχία.
+      - deleteUserConfirmation: Είσαστε σίγουροι ότι θέλετε να διαγράψετε τον χρήστη;
+      - actions: Ενέργειες
+      - language: Γλώσσα
+      - english: Αγγλικά
+      - greek: Ελληνικά

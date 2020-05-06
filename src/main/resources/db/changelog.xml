@@ -4,5 +4,6 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
   <include file="db/changelog/qlack-fuse-aaa/qlack.fuse.aaa.changelog.xml"/>
+  <include file="db/changelog/qlack-fuse-lexicon/qlack.fuse.lexicon.changelog.xml"/>
   <include file="db/backend_1.yaml"/>
 </databaseChangeLog>

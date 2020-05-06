@@ -16,7 +16,7 @@
     <maven.war.plugin.version>3.2.2</maven.war.plugin.version>
     <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
     <spring.boot.version>2.1.13.RELEASE</spring.boot.version>
-    <qlack.version>3.2.4</qlack.version>
+    <qlack.version>3.2.8</qlack.version>
     <mariadb.connector.version>2.5.3</mariadb.connector.version>
     <liquibase.version>3.8.5</liquibase.version>
     <lombok.version>1.18.12</lombok.version>
@@ -40,6 +40,11 @@
     <dependency>
       <groupId>com.eurodyn.qlack.fuse</groupId>
       <artifactId>qlack-fuse-security</artifactId>
+      <version>${qlack.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.eurodyn.qlack.fuse</groupId>
+      <artifactId>qlack-fuse-lexicon</artifactId>
       <version>${qlack.version}</version>
     </dependency>
 
