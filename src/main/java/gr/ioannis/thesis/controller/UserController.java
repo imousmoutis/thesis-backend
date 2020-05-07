@@ -19,30 +19,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collection;
+
 @RestController
 @RequestMapping(value = "/user")
 public class UserController {
-
-  private UserSearchCriteria userSearchCriteria;
 
   private UserService userService;
 
   @Autowired
   public UserController(UserService userService) {
-    userSearchCriteria = UserSearchCriteriaBuilder.createCriteria().build();
     this.userService = userService;
   }
 
   @GetMapping(value = "/count")
   @ResourceAccess(roleAccess = {"Administrator"})
   public long getUsersCount() {
-    return userService.findUserCount(userSearchCriteria);
+    return userService.findUserCount(UserSearchCriteriaBuilder.createCriteria().build());
   }
 
   @GetMapping
   @ResourceAccess(roleAccess = {"Administrator"})
   public Iterable<UserDTO> getUsers(@RequestParam int page,
       @RequestParam int size, @RequestParam String sortColumn, @RequestParam String sortOrder) {
+    UserSearchCriteria userSearchCriteria = UserSearchCriteriaBuilder.createCriteria().build();
     userSearchCriteria.setPageable(PageRequest.of(page, size, new Sort(sortOrder.equalsIgnoreCase("asc") ?
         Direction.ASC : Direction.DESC,
         sortColumn)));
@@ -61,6 +61,15 @@ public class UserController {
   public Response deleteUser(@PathVariable String userId) {
     userService.deleteUser(userId);
     return Response.ok(userId).build();
+  }
+
+  @GetMapping(value = "/unique")
+  public boolean uniqueUser(@RequestParam String term) {
+    UserSearchCriteria userSearchCriteria =  UserSearchCriteriaBuilder
+        .createCriteria().withUsername(term).build();
+    Iterable<UserDTO> userDTOS = userService.findUsers(userSearchCriteria);
+
+    return ((Collection<?>) userDTOS).isEmpty();
   }
 
 }

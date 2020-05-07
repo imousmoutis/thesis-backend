@@ -57,6 +57,14 @@ translations:
       - language: Language
       - english: English
       - greek: Greek
+      - close: Close
+      - itemsPerPage: Items per page
+      - rangeLabel: of
+      - nextPage: Next page
+      - lastPage: Last page
+      - firstPage: First page
+      - previousPage: Previous Page
+      - usernameExists: This username is already in use
   ################################################################################
   # GREEK translations
   ################################################################################
@@ -100,10 +108,18 @@ translations:
       - cancel: Ακύρωση
       - yesMessage: Ναι
       - noMessage: Όχι
-      - saveUserSuccessful: Ο χρήστης δημιουργήθηκε με επιτυχία.
+      - saveUserSuccessful: Ο χρήστης αποθηκεύτηκε με επιτυχία.
       - deleteUserSuccessful: Ο χρήστης διαγράφηκε με επιτυχία.
       - deleteUserConfirmation: Είσαστε σίγουροι ότι θέλετε να διαγράψετε τον χρήστη;
       - actions: Ενέργειες
       - language: Γλώσσα
       - english: Αγγλικά
       - greek: Ελληνικά
+      - close: Κλείσιμο
+      - itemsPerPage: Aντικείμενα ανά σελίδα
+      - rangeLabel: από
+      - nextPage: Επόμενη σελίδα
+      - lastPage: Τελευταία σελίδα
+      - firstPage: Πρώτη σελίδα
+      - previousPage: Προηγούμενη σελίδα
+      - usernameExists: Αυτό το όνομα χρήστη χρησιμοποιείται ήδη
