@@ -32,7 +32,7 @@ translations:
       - passwordRequired: The password is required.
       - passwordPatternInvalid: The password must contain at least one capital letter, one symbol and one number.
       - fullNameRequired: The full name is required.
-      - emailRequired: The email address Name is required.
+      - emailRequired: The email address is required.
       - credentialsInvalid: Please check your credentials.
       - registerButton: New here? Register.
       - loginButton: Already registered? Login.
@@ -65,6 +65,7 @@ translations:
       - firstPage: First page
       - previousPage: Previous Page
       - usernameExists: This username is already in use
+      - searchUsersBox: Type the username to filter the results
   ################################################################################
   # GREEK translations
   ################################################################################
@@ -123,3 +124,4 @@ translations:
       - firstPage: Πρώτη σελίδα
       - previousPage: Προηγούμενη σελίδα
       - usernameExists: Αυτό το όνομα χρήστη χρησιμοποιείται ήδη
+      - searchUsersBox: Πληκτρολογήστε το όνομα χρήστη για να περιορίσετε τα αποτελέσματα

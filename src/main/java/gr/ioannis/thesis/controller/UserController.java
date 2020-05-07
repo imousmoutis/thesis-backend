@@ -41,8 +41,10 @@ public class UserController {
   @GetMapping
   @ResourceAccess(roleAccess = {"Administrator"})
   public Iterable<UserDTO> getUsers(@RequestParam int page,
-      @RequestParam int size, @RequestParam String sortColumn, @RequestParam String sortOrder) {
-    UserSearchCriteria userSearchCriteria = UserSearchCriteriaBuilder.createCriteria().build();
+      @RequestParam int size, @RequestParam String sortColumn, @RequestParam String sortOrder,
+      @RequestParam String username) {
+    UserSearchCriteria userSearchCriteria = UserSearchCriteriaBuilder.createCriteria()
+        .withUsernameLike("%" + username + "%").build();
     userSearchCriteria.setPageable(PageRequest.of(page, size, new Sort(sortOrder.equalsIgnoreCase("asc") ?
         Direction.ASC : Direction.DESC,
         sortColumn)));
@@ -65,7 +67,7 @@ public class UserController {
 
   @GetMapping(value = "/unique")
   public boolean uniqueUser(@RequestParam String term) {
-    UserSearchCriteria userSearchCriteria =  UserSearchCriteriaBuilder
+    UserSearchCriteria userSearchCriteria = UserSearchCriteriaBuilder
         .createCriteria().withUsername(term).build();
     Iterable<UserDTO> userDTOS = userService.findUsers(userSearchCriteria);
 
