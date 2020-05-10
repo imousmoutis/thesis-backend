@@ -66,6 +66,8 @@ translations:
       - previousPage: Previous Page
       - usernameExists: This username is already in use
       - searchUsersBox: Type the username to filter the results
+      - 404Message: We couldn't find the page you were looking for.
+      - 404MessageLink: Return to Home Page
   ################################################################################
   # GREEK translations
   ################################################################################
@@ -125,3 +127,5 @@ translations:
       - previousPage: Προηγούμενη σελίδα
       - usernameExists: Αυτό το όνομα χρήστη χρησιμοποιείται ήδη
       - searchUsersBox: Πληκτρολογήστε το όνομα χρήστη για να περιορίσετε τα αποτελέσματα
+      - 404Message: Δεν μπορέσαμε να βρούμε την σελίδα που ζητήσατε.
+      - 404MessageLink: Επιστροφή στην αρχική σελίδα

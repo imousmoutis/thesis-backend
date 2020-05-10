@@ -2,7 +2,9 @@ package gr.ioannis.thesis.controller;
 
 import com.eurodyn.qlack.fuse.aaa.annotation.ResourceAccess;
 import com.eurodyn.qlack.fuse.aaa.criteria.UserSearchCriteria;
+import com.eurodyn.qlack.fuse.aaa.criteria.UserSearchCriteria.UserAttributeCriteria;
 import com.eurodyn.qlack.fuse.aaa.criteria.UserSearchCriteria.UserSearchCriteriaBuilder;
+import com.eurodyn.qlack.fuse.aaa.dto.UserAttributeDTO;
 import com.eurodyn.qlack.fuse.aaa.dto.UserDTO;
 import com.eurodyn.qlack.fuse.aaa.service.UserService;
 import javax.ws.rs.core.Response;
@@ -43,11 +45,13 @@ public class UserController {
   public Iterable<UserDTO> getUsers(@RequestParam int page,
       @RequestParam int size, @RequestParam String sortColumn, @RequestParam String sortOrder,
       @RequestParam String username) {
+
     UserSearchCriteria userSearchCriteria = UserSearchCriteriaBuilder.createCriteria()
         .withUsernameLike("%" + username + "%").build();
     userSearchCriteria.setPageable(PageRequest.of(page, size, new Sort(sortOrder.equalsIgnoreCase("asc") ?
         Direction.ASC : Direction.DESC,
         sortColumn)));
+
     return userService.findUsers(userSearchCriteria);
   }
 
