@@ -1,0 +1,191 @@
+databaseChangeLog:
+  - changeSet:
+      id: backend_02
+      author: Ioannis K. Mousmoutis
+      changes:
+        - createTable:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  type: varchar(2)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: name
+                  value: medical
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: name
+                  value: transportation
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: name
+                  value: clothingShoes
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 4
+              - column:
+                  name: name
+                  value: groceriesSupplies
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 5
+              - column:
+                  name: name
+                  value: automobile
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 6
+              - column:
+                  name: name
+                  value: rentLeasing
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 7
+              - column:
+                  name: name
+                  value: diningDrinks
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 8
+              - column:
+                  name: name
+                  value: entertainment
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 9
+              - column:
+                  name: name
+                  value: feesTaxes
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 10
+              - column:
+                  name: name
+                  value: donations
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 11
+              - column:
+                  name: name
+                  value: gifts
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 12
+              - column:
+                  name: name
+                  value: telecommunication
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 13
+              - column:
+                  name: name
+                  value: petCare
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 14
+              - column:
+                  name: name
+                  value: insurance
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 15
+              - column:
+                  name: name
+                  value: education
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 16
+              - column:
+                  name: name
+                  value: housing
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 17
+              - column:
+                  name: name
+                  value: hobbies
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 18
+              - column:
+                  name: name
+                  value: memberships
+        - insert:
+            tableName: expense_category
+            columns:
+              - column:
+                  name: id
+                  value: 19
+              - column:
+                  name: name
+                  value: other

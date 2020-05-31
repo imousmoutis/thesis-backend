@@ -6,4 +6,5 @@
   <include file="db/changelog/qlack-fuse-aaa/qlack.fuse.aaa.changelog.xml"/>
   <include file="db/changelog/qlack-fuse-lexicon/qlack.fuse.lexicon.changelog.xml"/>
   <include file="db/backend_1.yaml"/>
+  <include file="db/backend_2.yaml"/>
 </databaseChangeLog>

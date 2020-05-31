@@ -18,8 +18,10 @@ import java.util.Collections;
 
 @SpringBootApplication
 @EnableCaching
-@EnableJpaRepositories({"com.eurodyn.qlack.fuse.aaa.repository", "com.eurodyn.qlack.fuse.lexicon.repository"})
-@EntityScan({"com.eurodyn.qlack.fuse.aaa.model", "com.eurodyn.qlack.fuse.lexicon.model"})
+@EnableJpaRepositories({"com.eurodyn.qlack.fuse.aaa.repository", "com.eurodyn.qlack.fuse.lexicon.repository",
+    "gr.ioannis.thesis.repository"})
+@EntityScan({"com.eurodyn.qlack.fuse.aaa.model", "com.eurodyn.qlack.fuse.lexicon.model", "gr.ioannis.thesis"
+    + ".model"})
 @ComponentScan(basePackages = {
     "com.eurodyn.qlack.fuse.aaa",
     "com.eurodyn.qlack.fuse.security",

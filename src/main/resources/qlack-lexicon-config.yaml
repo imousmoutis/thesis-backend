@@ -68,6 +68,33 @@ translations:
       - searchUsersBox: Type the username to filter the results
       - 404Message: We couldn't find the page you were looking for.
       - 404MessageLink: Return to Home Page
+      - dashboardHeader: In this page you can view and edit your expenses.
+      - overview: Overview
+      - expensesFeed: Expenses Feed
+      - amount: Amount
+      - amountRequired: The amount is required.
+      - submitExpense: Sumbit Expense
+      - medical: Medical
+      - transportation: Transportation
+      - clothingShoes: Clothing / Shoes
+      - groceriesSupplies: Groceries / Supplies
+      - automobile: Automobile
+      - rentLeasing: Rent / Leasing
+      - diningDrinks: Dining / Drinks
+      - entertainment: Entertainment
+      - feesTaxes: Fees / Taxes
+      - donations: Donations
+      - gifts: Gifts
+      - telecommunication: Telecommunication
+      - petCare: Pet Care
+      - Insurance: Insurance
+      - education: Education
+      - housing: Housing
+      - hobbies: Hobbies
+      - memberships: Memberships
+      - other: Other
+      - category: Category
+      - categoryRequired: The category is required.
   ################################################################################
   # GREEK translations
   ################################################################################
@@ -129,3 +156,29 @@ translations:
       - searchUsersBox: Πληκτρολογήστε το όνομα χρήστη για να περιορίσετε τα αποτελέσματα
       - 404Message: Δεν μπορέσαμε να βρούμε την σελίδα που ζητήσατε.
       - 404MessageLink: Επιστροφή στην αρχική σελίδα
+      - overview: Περίληψη
+      - expensesFeed: Λίστα Εξόδων
+      - amount: Ποσό
+      - amountRequired: Το ποσό είναι υποχρεωτικό.
+      - submitExpense: Καταχώρηση Εξόδου
+      - medical: Υγεία
+      - transportation: Μετακινήσεις
+      - clothingShoes: Ρουχισμός / Παπούτσια
+      - groceriesSupplies: Προμήθειες
+      - automobile: Αυτοκίνητο
+      - rentLeasing: Ενοικίαση / Μίσθωση
+      - diningDrinks: Δείπνο / Ποτά
+      - entertainment: Διασκέδαση
+      - feesTaxes: Τέλη / Φόροι
+      - donations: Δωρεές
+      - gifts: Δώρα
+      - telecommunication: Τηλεπικοινωνία
+      - petCare: Φροντίδα Κατοικίδιου
+      - Insurance: Ασφάλεια
+      - education: Εκπαίδευση
+      - housing: Στέγαση
+      - hobbies: Χόμπι
+      - memberships: Συνδρομές
+      - other: Άλλο
+      - category: Κατηγορία
+      - categoryRequired: Η κατηγορία είναι υποχρεωτική.
