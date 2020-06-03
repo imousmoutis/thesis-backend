@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: backend_03
+      author: Ioannis K. Mousmoutis
+      changes:
+        - createTable:
+            tableName: expense
+            columns:
+              - column:
+                  name: id
+                  type: varchar(36)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: amount
+                  type: decimal
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date
+                  type: date
+                  constraints:
+                    nullable: false
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: expense_category_id
+                  type: varchar(36)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: varchar(36)
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            constraintName: fk_expense_category_id
+            baseTableName: expense
+            baseColumnNames: expense_category_id
+            referencedTableName: expense_category
+            referencedColumnNames: id
+            onDelete: cascade
+            onUpdate: cascade
+        - addForeignKeyConstraint:
+            constraintName: fk_user_id
+            baseTableName: expense
+            baseColumnNames: user_id
+            referencedTableName: aaa_user
+            referencedColumnNames: id
+            onDelete: cascade
+            onUpdate: cascade

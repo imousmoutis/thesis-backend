@@ -95,6 +95,7 @@ translations:
       - other: Other
       - category: Category
       - categoryRequired: The category is required.
+      - today: Today
   ################################################################################
   # GREEK translations
   ################################################################################
@@ -156,6 +157,7 @@ translations:
       - searchUsersBox: Πληκτρολογήστε το όνομα χρήστη για να περιορίσετε τα αποτελέσματα
       - 404Message: Δεν μπορέσαμε να βρούμε την σελίδα που ζητήσατε.
       - 404MessageLink: Επιστροφή στην αρχική σελίδα
+      - dashboardHeader: Σε αυτή την σελίδα μπορείτε να δείτε και να επεξεργαστείτε τα έξοδά σας.
       - overview: Περίληψη
       - expensesFeed: Λίστα Εξόδων
       - amount: Ποσό
@@ -182,3 +184,4 @@ translations:
       - other: Άλλο
       - category: Κατηγορία
       - categoryRequired: Η κατηγορία είναι υποχρεωτική.
+      - today: Σήμερα

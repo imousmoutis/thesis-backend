@@ -1,12 +1,19 @@
 package gr.ioannis.thesis.controller;
 
 import com.eurodyn.qlack.fuse.aaa.annotation.ResourceAccess;
+import gr.ioannis.thesis.dto.ExpenseDTO;
 import gr.ioannis.thesis.model.ExpenseCategory;
+import gr.ioannis.thesis.service.ExpenseCategoryService;
+import gr.ioannis.thesis.service.ExpenseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import gr.ioannis.thesis.service.ExpenseCategoryService;
 
 import java.util.List;
 
@@ -16,15 +23,26 @@ public class ExpenseController {
 
   private ExpenseCategoryService expenseCategoryService;
 
+  private ExpenseService expenseService;
+
   @Autowired
-  public ExpenseController(ExpenseCategoryService expenseCategoryService) {
+  public ExpenseController(ExpenseCategoryService expenseCategoryService, ExpenseService expenseService) {
     this.expenseCategoryService = expenseCategoryService;
+    this.expenseService = expenseService;
   }
 
   @GetMapping(value = "/categories")
   @ResourceAccess(roleAccess = {"Search User"})
   public List<ExpenseCategory> getCategories() {
     return expenseCategoryService.getExpenseCategories();
+  }
+
+  @PostMapping(produces = "application/json")
+  @ResourceAccess(roleAccess = {"Search User"})
+  public ResponseEntity<Object> saveExpense(@RequestBody ExpenseDTO expenseDTO,
+      @AuthenticationPrincipal UserDetails userDetails) {
+    expenseService.saveExpense(expenseDTO, userDetails.getUsername());
+    return ResponseEntity.noContent().build();
   }
 
 }
