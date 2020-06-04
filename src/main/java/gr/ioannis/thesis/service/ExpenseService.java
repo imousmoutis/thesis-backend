@@ -9,6 +9,9 @@ import gr.ioannis.thesis.repository.ExpenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+import java.util.List;
+
 @Service
 public class ExpenseService {
 
@@ -38,5 +41,11 @@ public class ExpenseService {
     expense = expenseRepository.save(expense);
 
     return expense.getId();
+  }
+
+  public List<ExpenseDTO> getUserExpenses(Date from, Date to, String username) {
+    List<Expense> expenses = expenseRepository.findAllByUserAndDateBetween(userRepository.findByUsername(username),
+        from, to);
+    return expenseMapper.mapToDTO(expenses);
   }
 }

@@ -5,6 +5,7 @@ import gr.ioannis.thesis.dto.ExpenseDTO;
 import gr.ioannis.thesis.model.ExpenseCategory;
 import gr.ioannis.thesis.service.ExpenseCategoryService;
 import gr.ioannis.thesis.service.ExpenseService;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -13,8 +14,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -24,6 +28,8 @@ public class ExpenseController {
   private ExpenseCategoryService expenseCategoryService;
 
   private ExpenseService expenseService;
+
+  private static final SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
   @Autowired
   public ExpenseController(ExpenseCategoryService expenseCategoryService, ExpenseService expenseService) {
@@ -37,12 +43,21 @@ public class ExpenseController {
     return expenseCategoryService.getExpenseCategories();
   }
 
-  @PostMapping(produces = "application/json")
+  @PostMapping
   @ResourceAccess(roleAccess = {"Search User"})
   public ResponseEntity<Object> saveExpense(@RequestBody ExpenseDTO expenseDTO,
       @AuthenticationPrincipal UserDetails userDetails) {
     expenseService.saveExpense(expenseDTO, userDetails.getUsername());
     return ResponseEntity.noContent().build();
+  }
+
+  @SneakyThrows
+  @GetMapping
+  @ResourceAccess(roleAccess = {"Search User"})
+  public List<ExpenseDTO> getUserExpenses(@RequestParam(name = "from") String from,
+      @RequestParam(name = "to") String to,
+      @AuthenticationPrincipal UserDetails userDetails) {
+    return expenseService.getUserExpenses(dateFormat.parse(from), dateFormat.parse(to), userDetails.getUsername());
   }
 
 }
