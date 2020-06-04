@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: backend_04
+      author: Ioannis K. Mousmoutis
+      changes:
+        - modifyDataType:
+            tableName: expense
+            columnName: amount
+            newDataType: decimal(10,2)

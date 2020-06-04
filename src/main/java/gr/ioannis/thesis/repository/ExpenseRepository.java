@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface ExpenseRepository extends JpaRepository<Expense, String> {
 
-  List<Expense> findAllByUserAndDateBetween(User user, Date from, Date to);
+  List<Expense> findAllByUserAndDateBetweenOrderByDateAsc(User user, Date from, Date to);
 
 }

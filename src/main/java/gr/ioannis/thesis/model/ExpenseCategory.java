@@ -13,7 +13,7 @@ import lombok.Setter;
 public class ExpenseCategory {
 
   @Id
-  private String id;
+  private Integer id;
 
   private String name;
 

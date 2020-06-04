@@ -3,6 +3,7 @@ package gr.ioannis.thesis.service;
 import gr.ioannis.thesis.model.ExpenseCategory;
 import gr.ioannis.thesis.repository.ExpenseCategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,6 +19,6 @@ public class ExpenseCategoryService {
   }
 
   public List<ExpenseCategory> getExpenseCategories() {
-    return expenseCategoryRepository.findAll();
+    return expenseCategoryRepository.findAll(Sort.by(Sort.Direction.ASC, "id"));
   }
 }

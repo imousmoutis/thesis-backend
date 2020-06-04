@@ -18,6 +18,6 @@ public class ExpenseDTO {
 
   private String description;
 
-  private String category;
+  private Integer category;
 
 }

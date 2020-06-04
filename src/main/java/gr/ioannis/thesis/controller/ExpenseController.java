@@ -2,6 +2,7 @@ package gr.ioannis.thesis.controller;
 
 import com.eurodyn.qlack.fuse.aaa.annotation.ResourceAccess;
 import gr.ioannis.thesis.dto.ExpenseDTO;
+import gr.ioannis.thesis.dto.ExpensesTotalDTO;
 import gr.ioannis.thesis.model.ExpenseCategory;
 import gr.ioannis.thesis.service.ExpenseCategoryService;
 import gr.ioannis.thesis.service.ExpenseService;
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -38,13 +38,13 @@ public class ExpenseController {
   }
 
   @GetMapping(value = "/categories")
-  @ResourceAccess(roleAccess = {"Search User"})
+  @ResourceAccess(roleAccess = {"User"})
   public List<ExpenseCategory> getCategories() {
     return expenseCategoryService.getExpenseCategories();
   }
 
   @PostMapping
-  @ResourceAccess(roleAccess = {"Search User"})
+  @ResourceAccess(roleAccess = {"User"})
   public ResponseEntity<Object> saveExpense(@RequestBody ExpenseDTO expenseDTO,
       @AuthenticationPrincipal UserDetails userDetails) {
     expenseService.saveExpense(expenseDTO, userDetails.getUsername());
@@ -52,12 +52,12 @@ public class ExpenseController {
   }
 
   @SneakyThrows
-  @GetMapping
-  @ResourceAccess(roleAccess = {"Search User"})
-  public List<ExpenseDTO> getUserExpenses(@RequestParam(name = "from") String from,
+  @GetMapping("/total")
+  @ResourceAccess(roleAccess = {"User"})
+  public ExpensesTotalDTO getUserTotalExpenses(@RequestParam(name = "from") String from,
       @RequestParam(name = "to") String to,
       @AuthenticationPrincipal UserDetails userDetails) {
-    return expenseService.getUserExpenses(dateFormat.parse(from), dateFormat.parse(to), userDetails.getUsername());
+    return expenseService.getUserTotalExpenses(dateFormat.parse(from), dateFormat.parse(to), userDetails.getUsername());
   }
 
 }

@@ -8,7 +8,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  type: varchar(2)
+                  type: tinyint(2)
                   constraints:
                     primaryKey: true
                     nullable: false
@@ -23,7 +23,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 1
+                  value: 01
               - column:
                   name: name
                   value: medical
@@ -32,7 +32,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 2
+                  value: 02
               - column:
                   name: name
                   value: transportation
@@ -41,7 +41,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 3
+                  value: 03
               - column:
                   name: name
                   value: clothingShoes
@@ -50,7 +50,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 4
+                  value: 04
               - column:
                   name: name
                   value: groceriesSupplies
@@ -59,7 +59,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 5
+                  value: 05
               - column:
                   name: name
                   value: automobile
@@ -68,7 +68,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 6
+                  value: 06
               - column:
                   name: name
                   value: rentLeasing
@@ -77,7 +77,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 7
+                  value: 07
               - column:
                   name: name
                   value: diningDrinks
@@ -86,7 +86,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 8
+                  value: 08
               - column:
                   name: name
                   value: entertainment
@@ -95,7 +95,7 @@ databaseChangeLog:
             columns:
               - column:
                   name: id
-                  value: 9
+                  value: 09
               - column:
                   name: name
                   value: feesTaxes

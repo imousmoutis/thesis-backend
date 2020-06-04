@@ -87,7 +87,7 @@ translations:
       - gifts: Gifts
       - telecommunication: Telecommunication
       - petCare: Pet Care
-      - Insurance: Insurance
+      - insurance: Insurance
       - education: Education
       - housing: Housing
       - hobbies: Hobbies
@@ -98,6 +98,7 @@ translations:
       - today: Today
       - newExpense: New Expense
       - newExpenseSuccessful: Your new expense has been successfully submitted.
+      - selectTimeRange: Select the date range of your expenses.
   ################################################################################
   # GREEK translations
   ################################################################################
@@ -178,7 +179,7 @@ translations:
       - gifts: Δώρα
       - telecommunication: Τηλεπικοινωνία
       - petCare: Φροντίδα Κατοικίδιου
-      - Insurance: Ασφάλεια
+      - insurance: Ασφάλεια
       - education: Εκπαίδευση
       - housing: Στέγαση
       - hobbies: Χόμπι
@@ -189,3 +190,4 @@ translations:
       - today: Σήμερα
       - newExpense: Νέο Έξοδο
       - newExpenseSuccessful: Το νέο σας έξοδο καταχωρήθηκε με επιτυχία
+      - selectTimeRange: Επιλέξτε το εύρος ημερομηνιών των εξόδων σας.
