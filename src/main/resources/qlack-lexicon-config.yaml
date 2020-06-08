@@ -99,6 +99,12 @@ translations:
       - newExpense: New Expense
       - newExpenseSuccessful: Your new expense has been successfully submitted.
       - selectTimeRange: Select the date range of your expenses.
+      - noExpensesFound: No expenses were found.
+      - lineChart: Line Chart
+      - barChart: Bar Chart
+      - totalExpensesHeader1: You have
+      - totalExpensesHeader2: expenses in total.
+      - for: for
   ################################################################################
   # GREEK translations
   ################################################################################
@@ -191,3 +197,9 @@ translations:
       - newExpense: Νέο Έξοδο
       - newExpenseSuccessful: Το νέο σας έξοδο καταχωρήθηκε με επιτυχία
       - selectTimeRange: Επιλέξτε το εύρος ημερομηνιών των εξόδων σας.
+      - noExpensesFound: Δεν βρέθηκαν έξοδα.
+      - lineChart: Γράφημα Γραμμών
+      - barChart: Ραβδόγραμμα
+      - totalExpensesHeader1: Έχετε
+      - totalExpensesHeader2: έξοδα στο σύνολο.
+      - for: για

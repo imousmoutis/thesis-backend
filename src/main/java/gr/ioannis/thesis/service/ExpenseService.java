@@ -3,12 +3,15 @@ package gr.ioannis.thesis.service;
 import com.eurodyn.qlack.fuse.aaa.repository.UserRepository;
 import gr.ioannis.thesis.dto.ExpenseDTO;
 import gr.ioannis.thesis.dto.ExpensesTotalDTO;
+import gr.ioannis.thesis.dto.PageableExpenseDTO;
 import gr.ioannis.thesis.mapper.ExpenseMapper;
 import gr.ioannis.thesis.model.Expense;
 import gr.ioannis.thesis.model.ExpenseCategory;
 import gr.ioannis.thesis.repository.ExpenseCategoryRepository;
 import gr.ioannis.thesis.repository.ExpenseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -96,5 +99,13 @@ public class ExpenseService {
     expensesTotalDTO.setTotalExpenses(expensesArray);
 
     return expensesTotalDTO;
+  }
+
+  public PageableExpenseDTO getUserExpenses(int page, int size, String username) {
+    Page<Expense> results = expenseRepository.findAllByUserOrderByDateAsc(userRepository.findByUsername(username),
+        PageRequest.of(page, size));
+
+    return new PageableExpenseDTO(results.getTotalElements(),
+        results.stream().map(expenseMapper::mapToDTO).collect(Collectors.toList()));
   }
 }

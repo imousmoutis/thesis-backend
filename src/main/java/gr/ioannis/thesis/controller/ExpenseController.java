@@ -3,6 +3,7 @@ package gr.ioannis.thesis.controller;
 import com.eurodyn.qlack.fuse.aaa.annotation.ResourceAccess;
 import gr.ioannis.thesis.dto.ExpenseDTO;
 import gr.ioannis.thesis.dto.ExpensesTotalDTO;
+import gr.ioannis.thesis.dto.PageableExpenseDTO;
 import gr.ioannis.thesis.model.ExpenseCategory;
 import gr.ioannis.thesis.service.ExpenseCategoryService;
 import gr.ioannis.thesis.service.ExpenseService;
@@ -58,6 +59,13 @@ public class ExpenseController {
       @RequestParam(name = "to") String to,
       @AuthenticationPrincipal UserDetails userDetails) {
     return expenseService.getUserTotalExpenses(dateFormat.parse(from), dateFormat.parse(to), userDetails.getUsername());
+  }
+
+  @GetMapping
+  @ResourceAccess(roleAccess = {"User"})
+  public PageableExpenseDTO getUsers(@RequestParam int page,
+      @RequestParam int size, @AuthenticationPrincipal UserDetails userDetails) {
+    return expenseService.getUserExpenses(page, size, userDetails.getUsername());
   }
 
 }

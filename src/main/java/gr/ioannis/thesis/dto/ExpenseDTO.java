@@ -11,6 +11,8 @@ import java.util.Date;
 @Setter
 public class ExpenseDTO {
 
+  private String id;
+
   private BigDecimal amount;
 
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
