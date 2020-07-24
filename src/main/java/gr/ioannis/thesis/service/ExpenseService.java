@@ -59,6 +59,10 @@ public class ExpenseService {
     return expense.getId();
   }
 
+  public void deleteExpense(String expenseId) {
+    expenseRepository.deleteById(expenseId);
+  }
+
   public ExpensesTotalDTO getUserTotalExpenses(Date from, Date to, String username) {
 
     ExpensesTotalDTO expensesTotalDTO = new ExpensesTotalDTO();
