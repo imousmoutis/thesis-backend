@@ -104,6 +104,10 @@ translations:
       - totalExpensesHeader2: expenses in total.
       - for: for
       - deleteExpenseSuccessful: Expense successfully deleted.
+      - description: Description
+      - date: Date
+      - from: From
+      - to: To
   ################################################################################
   # GREEK translations
   ################################################################################
@@ -201,3 +205,7 @@ translations:
       - totalExpensesHeader2: έξοδα στο σύνολο.
       - for: για
       - deleteExpenseSuccessful: Το έξοδο διαγράφηκε με επιτυχία.
+      - description: Περιγραφή
+      - date: Ημερομηνία
+      - from: Από
+      - to: Έως
